@@ -9,10 +9,6 @@ const PORT = process.env.PORT || 3030;
 
 app.use(express.static(path.join(__dirname, 'frontend/build')))
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/frontend/build/index.html'))
-})
-
 // WARNING: YOU SHOULD CONFIGURE CORS TO NOT ALLOW ACCESS UNLESS SPECIFIED.
 app.get("/quote", cors(),(req, res) =>{
     
@@ -26,6 +22,10 @@ app.get("/quote", cors(),(req, res) =>{
     }).then(results => res.send(results)).catch(err => console.error(err))
     
 });
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/frontend/build/index.html'))
+})
 
 app.listen(PORT, () => {
     console.log("listening on port 3030")
