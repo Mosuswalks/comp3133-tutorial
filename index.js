@@ -3,7 +3,7 @@ const app = express();
 const cors = require("cors");
 const request = require("request");
 
-quoteUrl = "http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en"
+quoteUrl = "https://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en"
 const PORT = process.env.PORT || 3030;
 
 
