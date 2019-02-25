@@ -5,7 +5,7 @@ import "./App.css";
 
 class App extends Component {
   getQuote = () => {
-    Axios.get("http://localhost:3030/quote")
+    Axios.get("/quote")
       .then(response => {
         console.log(response);
         this.setState({
