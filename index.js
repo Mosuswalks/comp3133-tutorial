@@ -4,6 +4,8 @@ const cors = require("cors");
 const request = require("request");
 
 quoteUrl = "http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en"
+const PORT = process.env.PORT || 3030;
+
 
 // WARNING: YOU SHOULD CONFIGURE CORS TO NOT ALLOW ACCESS UNLESS SPECIFIED.
 app.get("/quote", cors(),(req, res) =>{
@@ -19,6 +21,6 @@ app.get("/quote", cors(),(req, res) =>{
     
 });
 
-app.listen(3030, () => {
+app.listen(PORT, () => {
     console.log("listening on port 3030")
 });
